@@ -48,7 +48,28 @@ app.post('/auth', function(request, response){
 
 });
 
+//i've posted two options because I wasn't sure which we should use
 
+var logout=function(request, response, next){
+	request.session.loggedIn=false;
+	response.redirect('/login.html');
+};
+
+//OR
+//http://www.coding4developers.com/node-js/login-and-register-in-node-js-mongo-db-session-in-node-js/
+
+app.get('/logout', function(req, res) {
+	req.session.destroy(function(err){  
+		  if(err){  
+			  console.log(err); 
+			  Response.errorResponse(err.message,res); 
+		  }  
+		  else  
+		  {  
+			  Response.successResponse('User logged out successfully!',res,{}); 
+		  }  
+	  });
+  });
 
 
 
