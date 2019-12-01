@@ -47,10 +47,8 @@ app.post('/auth', function(request, response){
 			if(results.length > 0){
 				request.session.loggedin = true;
 				context.user = results[0];
-				console.log(context.user.u_id);
 				request.session.u_id = context.user.u_id;
 				request.session.username = username;
-				console.log(request.session);
 				response.render('home', results);
 			}
 			else {
@@ -76,7 +74,6 @@ app.get('/user-edit', function(req, res){
 	req.session.username, function(error, results, fields){
 		if(results.length > 0){
 			context.user = results[0];
-			console.log(context.user);
 			res.render('user-edit', context);
 		}
 		else {
@@ -93,12 +90,13 @@ app.post('/user-edit', function(req, res){
 	console.log(req.session.id);
 
 
-	var sql = "UPDATE UserTable SET firstname=?, lastname=?, email=? WHERE u_id=?";
+	var sql = "UPDATE UserTable SET fname=?, lname=?, email=? WHERE u_id=?";
 	var data = [req.body.fname, req.body.lname, req.body.email, req.session.u_id];
 
 	sql = mysql.pool.query(sql, data, function(error, results, fields){
 		
 		if(error) {
+			console.log("Error occured");
 			console.log(error);
 		}
 		
