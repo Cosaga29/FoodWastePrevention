@@ -100,13 +100,27 @@ app.post('/user-edit', function(req, res){
 			console.log(error);
 		}
 		
-		res.render('home', context);	
 	
-	});		
+	});
+
+	res.render('home', context);
+		
 
 });
 
 
+app.get('/logout', function(req, res) {
+        req.session.destroy(function(err){
+                  if(err){
+                          console.log(err);
+                          res.errorResponse(err.message,res);
+                  }
+                  else
+                  {
+                  res.sendFile(path.join(__dirname + '/login.html'));
+		}
+          });
+  });
 
 
 
