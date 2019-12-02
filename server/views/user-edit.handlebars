@@ -1,0 +1,35 @@
+<html>
+
+<!--
+<h1>Update {{user.fname}} {{user.lname}}:</h1>
+<form id="update-user. action="/user-edit" method="post">
+    First name: <input type="text" name="fname" value="{{user.fname}}"><br>
+    Last name: <input type="text" name="lname" value="{{user.lname}}"><br>
+    Email:  <input type="text" name="email" value="{{user.email}}"><br>
+    <input id="editStuff" type="submit" value="Done" name="editUser">
+</form>
+-->
+
+<form action="/user-edit" method="post">
+  <div class="form-group">
+    <label for="FirstNameInput">First Name</label>
+    <input type="text" class="form-control" id="fnameField" aria-describedby="emailHelp" name="fname" value="{{user.fname}}">
+    <small id="fname_desc" class="form-text text-muted">Enter a first name</small>
+  </div>
+
+ <div class="form-group">
+    <label for="LastNameInput">Last Name</label>
+    <input type="text" class="form-control" id="lnameField" aria-describedby="emailHelp" name="lname" value="{{user.lname}}">
+    <small id="lname_desc" class="form-text text-muted">Enter a last name</small>
+  </div>
+
+
+ <div class="form-group">
+    <label for="EmailInput">Email</label>
+    <input type="text" class="form-control" id="emailField" aria-describedby="emailHelp" name="email" value="{{user.email}}">
+    <small id="email_desc" class="form-text text-muted">Enter an email</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</html>
