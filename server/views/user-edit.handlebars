@@ -1,15 +1,19 @@
 <html>
 
-<!--
 <h1>Update {{user.fname}} {{user.lname}}:</h1>
 <form id="update-user. action="/user-edit" method="post">
-    First name: <input type="text" name="fname" value="{{user.fname}}"><br>
-    Last name: <input type="text" name="lname" value="{{user.lname}}"><br>
-    Email:  <input type="text" name="email" value="{{user.email}}"><br>
-    <input id="editStuff" type="submit" value="Done" name="editUser">
+  Username: <input type="text" name="username" value="{{user.username}}"><br>
+  Password: <input type="password" name="password" value=""><br>
+  First name: <input type="text" name="fname" value="{{user.fname}}"><br>
+  Last name: <input type="text" name="lname" value="{{user.lname}}"><br>
+  Email: <input type="text" name="email" value="{{user.email}}"><br>
+  <input id="editStuff" type="submit" value="Done" name="editUser">
 </form>
--->
 
+</html>
+
+
+<!--
 <form action="/user-edit" method="post">
   <div class="form-group">
     <label for="FirstNameInput">First Name</label>
@@ -33,3 +37,4 @@
 </form>
 
 </html>
+-->
