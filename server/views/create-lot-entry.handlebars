@@ -1,0 +1,67 @@
+<h1 style="font-family:Tahoma">
+  Manual Lot Entry
+</h1>
+<form action="/home" method="get">
+  <button type="submit" class="btn btn-primary">Return</button>
+</form>
+<br>
+<br>
+<form action="/enter-lot" method="post">
+  <div class="form-group row">
+    <div class="col-xs-2">
+      <label for="inputsm">Lot Number</label>
+      <input type="number" class="form-control" id="lotField" aria-describedby="emailHelp" name="lot_number">
+      <small id="fname_desc" class="form-text text-muted">Enter Lot Number</small>
+    </div>
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Description</label>
+      <input type="text" class="form-control" id="descField" aria-describedby="emailHelp" name="description">
+      <small id="fname_desc" class="form-text text-muted">Enter Short Description</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Start Weight</label>
+      <input type="number" class="form-control" id="weightField" aria-describedby="emailHelp" name="start_weight">
+      <small id="fname_desc" class="form-text text-muted">Enter Initial Lot Weight</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Start Location</label>
+      <input type="text" class="form-control" id="startField" aria-describedby="emailHelp" name="start_location">
+      <small id="lname_desc" class="form-text text-muted">Enter Starting Location</small>
+    </div>
+
+    <div class="form-group row">
+      <div class="form-group col-xs-2">
+        <label for="inputsm">Zip</label>
+        <input type="text" class="form-control" id="zipField" aria-describedby="emailHelp" name="zip">
+        <small id="email_desc" class="form-text text-muted">Enter Starting Zip</small>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Food Type</label>
+      <input type="number" class="form-control" id="foodField" aria-describedby="emailHelp" name="food_type">
+      <small id="email_desc" class="form-text text-muted">Enter Food Type</small>
+    </div>
+
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Organization ID</label>
+      <input type="text" class="form-control" id="oField" aria-describedby="emailHelp" name="o_id">
+      <small id="email_desc" class="form-text text-muted">Enter Organization ID</small>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</html>

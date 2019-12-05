@@ -1,3 +1,5 @@
+<!--
+
 <html>
 
 <h1>Update {{user.fname}} {{user.lname}}:</h1>
@@ -11,30 +13,58 @@
 </form>
 
 </html>
+-->
 
-
-<!--
+<h1 style="font-family:Tahoma">
+  Edit Account
+</h1>
+<form action="/home" method="get">
+  <button type="submit" class="btn btn-primary">Return</button>
+</form>
+<br>
+<br>
 <form action="/user-edit" method="post">
-  <div class="form-group">
-    <label for="FirstNameInput">First Name</label>
-    <input type="text" class="form-control" id="fnameField" aria-describedby="emailHelp" name="fname" value="{{user.fname}}">
-    <small id="fname_desc" class="form-text text-muted">Enter a first name</small>
+  <div class="form-group row">
+    <div class="col-xs-2">
+      <label for="inputsm">Username</label>
+      <input type="text" class="form-control" id="fnameField" aria-describedby="emailHelp" name="username"
+        value="{{user.username}}">
+      <small id="fname_desc" class="form-text text-muted">Enter a username</small>
+    </div>
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Password</label>
+      <input type="password" class="form-control" id="fnameField" aria-describedby="emailHelp" name="password" value="">
+      <small id="fname_desc" class="form-text text-muted">Enter a password (blank to not change)</small>
+    </div>
   </div>
 
- <div class="form-group">
-    <label for="LastNameInput">Last Name</label>
-    <input type="text" class="form-control" id="lnameField" aria-describedby="emailHelp" name="lname" value="{{user.lname}}">
-    <small id="lname_desc" class="form-text text-muted">Enter a last name</small>
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">First Name</label>
+      <input type="text" class="form-control" id="fnameField" aria-describedby="emailHelp" name="fname"
+        value="{{user.fname}}">
+      <small id="fname_desc" class="form-text text-muted">Enter a first name</small>
+    </div>
+
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Last Name</label>
+      <input type="text" class="form-control" id="lnameField" aria-describedby="emailHelp" name="lname"
+        value="{{user.lname}}">
+      <small id="lname_desc" class="form-text text-muted">Enter a last name</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Email</label>
+      <input type="text" class="form-control" id="emailField" aria-describedby="emailHelp" name="email"
+        value="{{user.email}}">
+      <small id="email_desc" class="form-text text-muted">Enter an email</small>
+    </div>
   </div>
 
 
- <div class="form-group">
-    <label for="EmailInput">Email</label>
-    <input type="text" class="form-control" id="emailField" aria-describedby="emailHelp" name="email" value="{{user.email}}">
-    <small id="email_desc" class="form-text text-muted">Enter an email</small>
-  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </html>
--->

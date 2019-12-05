@@ -37,6 +37,7 @@ app.use("/user-edit", require("./routes/user_edit"));
 app.use("/", require("./routes/login"));
 app.use("/home", require("./routes/home"));
 app.use("/logout", require("./routes/logout"));
+app.use("/enter-lot", require("./routes/enter_lot"));
 app.use(require("./routes/errors"));
 
 app.listen(app.get("port"), function() {
