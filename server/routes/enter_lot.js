@@ -1,14 +1,19 @@
 var express = require("express");
 var mysql = require("../dbcon.js");
 var router = express.Router();
+var authenticate = require("../authenticator");
 
 router
   .route("/")
   .get(function(req, res) {
+    if (!authenticate(req.session, null, res)) {
+      return;
+    }
+
     //TODO: autheticate user
     /**
      *
-     * if(authenticate(req.session, 1))
+     * if(authenticate(req.session, 1, res))
      * {
      *  //ensure that account type is producer/distributor
      * }
@@ -26,7 +31,6 @@ router
         console.log(error);
       } else {
         context.results = results;
-        //TODO: ADD population of select html element
         res.render("create-lot-entry", context);
       }
     });
@@ -36,7 +40,7 @@ router
     //authenticate
 
     var sql =
-      "INSERT INTO UserTable (lot_number, description, start_weight, start_location, zip, food_type, o_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+      "INSERT INTO LotTable (lot_number, description, start_weight, start_location, zip, food_type, o_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
     var data = [
       req.body.lot_number,
       req.body.description,
@@ -50,9 +54,12 @@ router
       if (error) {
         console.log("Error while inserting in DB:");
         console.log(error);
+        context.user = req.session.username;
+        context.message = "Error creating lot#: " + req.body.lot_number;
       } else {
+        context.user = req.session.username;
         context.message =
-          "Lot " + req.body.lot_number + "successfully entered.";
+          "Lot " + req.body.lot_number + " successfully entered.";
       }
       res.render("home", context);
     });
