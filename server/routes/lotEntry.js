@@ -7,7 +7,7 @@ router
   .get(function(req, res) {
     //TODO: add timeouts for successive account creations
     var context = {};
-    res.render("create-lotEntry", context);
+    res.render("create-lot-entry", context);
   })
   .post(function(req, res) {
     var context = {};
@@ -16,10 +16,10 @@ router
     //check that user entered same password (password=passwordv)
     //if (req.body.password != req.body.passwordv) {
     //  context.message = "Passwords must match, please try again";
-      //TODO: re-populate form with good data
+    //TODO: re-populate form with good data
     //  res.render("create-lotEntry", context);
     //  return;
-    }
+    // }
 
     var sql =
       "INSERT INTO UserTable (l_id, lot_number, description, start_weight, start_location, zip, food_type, o_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -41,7 +41,7 @@ router
         console.log("Lot entry manually created");
       }
     });
-    res.render("lotEntry");
+    res.render("create-lot-entry");
   });
 
 module.exports = router;
