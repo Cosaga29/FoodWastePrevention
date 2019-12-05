@@ -1,0 +1,81 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Food Waste Prevention Manual Lot Entry Form</title>
+  <style>
+    .lotEntry-form {
+      width: 300px;
+      margin: 0 auto;
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    .lotEntry-form h1 {
+      text-align: center;
+      color: #4d4d4d;
+      font-size: 24px;
+      padding: 20px 0 20px 0;
+    }
+
+    .lotEntry-form select,
+    .lotEntry-form input[type="password"],
+    .lotEntry-form input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #dddddd;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .lotEntry-form input[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background-color: #535b63;
+      border: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .lotEntry-button input {
+      width: 25%;
+      position: relative;
+      left: 37.5%;
+      padding: 10px;
+      background-color: #24303b;
+      border: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<h3>{{message}}</h3>
+
+<body>
+  <div class="lotEntry-form">
+    <h1>Manual Lot Entry Form</h1>
+    <form action="create-lotEntry" method="POST">
+      <input type="text" name="l_id" placeholder="Lot ID" required />
+      <input type="text" name="lot_number" placeholder="Lot Number" required />
+      <input type="text" name="description" placeholder="Lot Description" />
+      <input type="number" name="start_weight" placeholder="Lot Start Weight" />
+      <input type="text" name="start_location" placeholder="Lot Start Location" required />
+      <input type="number" name="zip" placeholder="zip Code" required />
+      <input type="text" name="food_type" placeholder="Food Type" required />
+      <input type="text" name="o_id" placeholder="Organization ID" required />
+      <select name="account_type">
+        <option value="0">User</option>
+        <option value="1">Producer/Distributor</option>
+        <option value="2">Third-Party Org</option>
+      </select>
+      <input type="submit" />
+    </form>
+  </div>
+  <br />
+</body>
+
+</html>
