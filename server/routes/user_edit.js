@@ -6,8 +6,7 @@ var authenticate = require("../authenticator");
 router
   .route("/")
   .get(function(req, res) {
-    if (!authenticate(req.session)) {
-      res.send("Must be logged in to access this resource.");
+    if (!authenticate(req.session, null, res)) {
       return;
     }
     var context = {};
@@ -27,8 +26,7 @@ router
     );
   })
   .post(function(req, res) {
-    if (!authenticate(req.session)) {
-      res.send("Must be logged in to access this resource.");
+    if (!authenticate(req.session, null, res)) {
       return;
     }
 

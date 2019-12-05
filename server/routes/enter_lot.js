@@ -51,10 +51,11 @@ router
         console.log("Error while inserting in DB:");
         console.log(error);
       } else {
-        console.log("Lot entry manually created");
+        context.message =
+          "Lot " + req.body.lot_number + "successfully entered.";
       }
+      res.render("home", context);
     });
-    res.render("create-lot-entry");
   });
 
 module.exports = router;

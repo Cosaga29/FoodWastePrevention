@@ -6,43 +6,57 @@
 </form>
 <br>
 <br>
-<form action="/user-edit" method="post">
+<form action="/enter-lot" method="post">
   <div class="form-group row">
     <div class="col-xs-2">
-      <label for="inputsm">Username</label>
-      <input type="text" class="form-control" id="fnameField" aria-describedby="emailHelp" name="username"
-        value="{{user.username}}">
-      <small id="fname_desc" class="form-text text-muted">Enter a username</small>
+      <label for="inputsm">Lot Number</label>
+      <input type="number" class="form-control" id="lotField" aria-describedby="emailHelp" name="lot_number">
+      <small id="fname_desc" class="form-text text-muted">Enter Lot Number</small>
     </div>
     <div class="form-group col-xs-2">
-      <label for="inputsm">Password</label>
-      <input type="password" class="form-control" id="fnameField" aria-describedby="emailHelp" name="password" value="">
-      <small id="fname_desc" class="form-text text-muted">Enter a password (blank to not change)</small>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <div class="form-group col-xs-2">
-      <label for="inputsm">First Name</label>
-      <input type="text" class="form-control" id="fnameField" aria-describedby="emailHelp" name="fname"
-        value="{{user.fname}}">
-      <small id="fname_desc" class="form-text text-muted">Enter a first name</small>
-    </div>
-
-    <div class="form-group col-xs-2">
-      <label for="inputsm">Last Name</label>
-      <input type="text" class="form-control" id="lnameField" aria-describedby="emailHelp" name="lname"
-        value="{{user.lname}}">
-      <small id="lname_desc" class="form-text text-muted">Enter a last name</small>
+      <label for="inputsm">Description</label>
+      <input type="text" class="form-control" id="descField" aria-describedby="emailHelp" name="description">
+      <small id="fname_desc" class="form-text text-muted">Enter Short Description</small>
     </div>
   </div>
 
   <div class="form-group row">
     <div class="form-group col-xs-2">
-      <label for="inputsm">Email</label>
-      <input type="text" class="form-control" id="emailField" aria-describedby="emailHelp" name="email"
-        value="{{user.email}}">
-      <small id="email_desc" class="form-text text-muted">Enter an email</small>
+      <label for="inputsm">Start Weight</label>
+      <input type="number" class="form-control" id="weightField" aria-describedby="emailHelp" name="start_weight">
+      <small id="fname_desc" class="form-text text-muted">Enter Initial Lot Weight</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Start Location</label>
+      <input type="text" class="form-control" id="startField" aria-describedby="emailHelp" name="start_location">
+      <small id="lname_desc" class="form-text text-muted">Enter Starting Location</small>
+    </div>
+
+    <div class="form-group row">
+      <div class="form-group col-xs-2">
+        <label for="inputsm">Zip</label>
+        <input type="text" class="form-control" id="zipField" aria-describedby="emailHelp" name="zip">
+        <small id="email_desc" class="form-text text-muted">Enter Starting Zip</small>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Food Type</label>
+      <input type="number" class="form-control" id="foodField" aria-describedby="emailHelp" name="food_type">
+      <small id="email_desc" class="form-text text-muted">Enter Food Type</small>
+    </div>
+
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Organization ID</label>
+      <input type="text" class="form-control" id="oField" aria-describedby="emailHelp" name="o_id">
+      <small id="email_desc" class="form-text text-muted">Enter Organization ID</small>
     </div>
   </div>
 

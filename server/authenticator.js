@@ -15,14 +15,22 @@ var express = require("express");
  * @param {session object} session
  * @param {int} access_level
  */
-function authenticate(session, access_level) {
+function authenticate(session, access_level, res) {
   if (!access_level) {
     if (session.username && session.u_id) {
       return true;
+    } else {
+      var context = {};
+      context.message = "Must be logged in to access this resource.";
+      res.render("auth", context);
+      return false;
     }
-    return false;
   } else {
     if (session.account_type != access_level) {
+      var context = {};
+      context.message =
+        "You do not have account privileges to access this feature.";
+      res.render("auth", context);
       return false;
     }
     return true;
