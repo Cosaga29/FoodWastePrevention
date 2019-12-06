@@ -1,2 +1,0 @@
-fix username update
-fix repopulate homepage after edit profile
