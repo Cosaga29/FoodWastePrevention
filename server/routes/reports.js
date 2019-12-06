@@ -74,6 +74,21 @@ router
         context.user = req.session.username;
         res.render("reports", context);
       });
+    } else if (req.body.hasOwnProperty("fetchLotsButton")) {
+      var sql = "SELECT * FROM LotTable";
+      sql = mysql.pool.query(sql, function(error, results, fields) {
+        if (error) {
+          context.message = "Unable to access database.";
+          console.log(error);
+          context.user = req.session.username;
+          res.render("home", context);
+        }
+        context = table_generator(context, results, fields);
+        context.message =
+          "DB results generated successfully. Showing Lot Table Data.";
+        context.user = req.session.username;
+        res.render("reports", context);
+      });
     }
   });
 
