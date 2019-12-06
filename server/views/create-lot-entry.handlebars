@@ -23,9 +23,33 @@
   <div class="form-group row">
     <div class="form-group col-xs-2">
       <label for="inputsm">Start Weight</label>
-      <input type="number" class="form-control" id="weightField" aria-describedby="emailHelp" name="start_weight">
+      <input type="number" step=0.01 class="form-control" id="weightField" aria-describedby="emailHelp"
+        name="start_weight">
       <small id="fname_desc" class="form-text text-muted">Enter Initial Lot Weight</small>
     </div>
+
+    <!--Populate the organizations from the DB-->
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Organization ID</label>
+      <select class="form-control" name="o_id">
+        {{#each results}}
+        <option value="{{o_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <!--
+    <div class="form-group col-xs-2">
+      <label for="inputsm">Organization ID</label>
+      <input type="text" class="form-control" id="oField" aria-describedby="emailHelp" name="o_id">
+      <small id="email_desc" class="form-text text-muted">Enter Organization ID</small>
+    </div>
+    -->
+
+
+
+
+
   </div>
 
   <div class="form-group row">
@@ -49,14 +73,12 @@
   <div class="form-group row">
     <div class="form-group col-xs-2">
       <label for="inputsm">Food Type</label>
-      <input type="number" class="form-control" id="foodField" aria-describedby="emailHelp" name="food_type">
-      <small id="email_desc" class="form-text text-muted">Enter Food Type</small>
-    </div>
-
-    <div class="form-group col-xs-2">
-      <label for="inputsm">Organization ID</label>
-      <input type="text" class="form-control" id="oField" aria-describedby="emailHelp" name="o_id">
-      <small id="email_desc" class="form-text text-muted">Enter Organization ID</small>
+      <select class="form-control" name="food_type">
+        <option value="1">Meat</option>
+        <option value="2">Fruit</option>
+        <option value="3">Vegetable</option>
+        <option value="4">Grain</option>
+      </select>
     </div>
   </div>
 
