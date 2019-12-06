@@ -1,0 +1,140 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/css/navbars.css">
+</head>
+
+
+<style>
+  .fetch-button {
+    position: absolute;
+    top: 12%;
+    left: 9%;
+  }
+
+  .btn-pos {
+    position: absolute;
+    top: 12%;
+  }
+
+  .btn-group button {
+
+    background-color: rgb(198, 238, 233);
+    /* Green background */
+    border: 1px solid rgb(135, 145, 135);
+    /* Green border */
+    color: white;
+    /* White text */
+    padding: 10px 24px;
+    /* Some padding */
+    cursor: pointer;
+    /* Pointer/hand icon */
+    float: left;
+    /* Float the buttons side by side */
+  }
+
+  .btn-group button:not(:last-child) {
+    border-right: none;
+    /* Prevent double borders */
+  }
+
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+</style>
+
+
+
+
+<html>
+<div class="topbar">
+</div>
+
+<div class="sidenav">
+  <div class="spacer">
+    <h3><a href="/home">Home</a></h3>
+  </div>
+
+  <div class="other-elements">
+    <a href='/enter-lot'>Add Lot</a>
+    <a href='/map view'>View Food Map</a>
+    <a href='/reports'>Generate Reports</a>
+  </div>
+
+  <div class="spacer">
+    <h3>Search</h3>
+  </div>
+
+  <div class="other-elements">
+    <a href='/search-type'>Type</a>
+    <a href='/search-lot'>Lot</a>
+  </div>
+
+  <div class="spacer">
+    <h3>Settings</h3>
+  </div>
+
+  <div class="bottom-elements">
+    <a href='/user-edit'>Edit Profile </a>
+    <a href='/logout'>Logout</a>
+  </div>
+
+</div>
+
+
+<div class="main">
+  <h2> Food Waste Prevention Project </h2>
+  {{#if message}}
+  <h4 class="message">Message: {{message}}</h4>
+  {{/if}}
+  <h4 class="user-info">Welcome: {{user}}</h4>
+
+  <form action="/reports" method="post">
+    <button type="submit" name="fetchButton" class="fetch-button">Fetch Results</button>
+  </form>
+  <div class="btn-pos">
+    <div class="btn-group">
+      <form action="/reports" method="post">
+        <button type="submit" name="fetchUsersButton">Users</button>
+        <button type="submit" name="fetchLossEventsButton">Loss Events</button>
+        <button type="submit" name="fetchOrgsButton">Orgs</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        {{#each fields}}
+        <th scope="col">{{this}}</th>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each rowData}}
+      <tr>
+        {{#each this}}
+        <td>{{this}}</td>
+        {{/each}}
+        {{/each}}
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+
+</html>

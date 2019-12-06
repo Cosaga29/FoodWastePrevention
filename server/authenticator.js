@@ -1,7 +1,7 @@
 var express = require("express");
 
 /**
- *
+ * Author: Martin
  *
  * Function that authenticates a user.
  * First use case: only session given: ensures that a valid user is logged into the system.
@@ -43,6 +43,7 @@ function authenticate(session, access_level, res) {
       var context = {};
       context.message =
         "You do not have account privileges to access this feature.";
+      context.access_flag = 1;
       res.render("auth", context);
       return false;
     }
