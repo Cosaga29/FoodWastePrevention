@@ -23,7 +23,7 @@ app.use(
 
 app.engine("handlebars", handlebars.engine);
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/static", express.static("public"));
+app.use("/static", express.static("static"));
 app.set("view engine", "handlebars");
 app.set("port", process.argv[2]);
 app.set("mysql", mysql);
@@ -36,6 +36,7 @@ app.use("/auth", require("./routes/auth"));
 app.use("/user-edit", require("./routes/user_edit"));
 app.use("/", require("./routes/login"));
 app.use("/home", require("./routes/home"));
+app.use("/reports", require("./routes/reports"));
 app.use("/logout", require("./routes/logout"));
 app.use("/enter-lot", require("./routes/enter_lot"));
 app.use(require("./routes/errors"));
